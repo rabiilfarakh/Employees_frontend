@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ListEmployeeComponent = () => {
+  const navigate = useNavigate();
+  
   const Data = [
     {
       id: 1,
@@ -23,10 +26,15 @@ const ListEmployeeComponent = () => {
   ];
 
   return (
-    <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
-      <div className="w-100">
-        <h1 className="text-center mb-4">Employees</h1>
-        <table className="table table-striped table-bordered w-100">
+    <div className="container-fluid d-flex flex-column align-items-center">
+      <div className="w-75">
+        <div className="">
+        <h1 className="text-center mb-4">List Employees</h1>
+        <button className="btn btn-primary mb-3" onClick={() => navigate('/add-employee')}>
+            Ajouter
+        </button>
+        </div>
+        <table className="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Id</th>
